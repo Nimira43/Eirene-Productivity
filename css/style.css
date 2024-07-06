@@ -1,1 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&family=Protest+Revolution&display=swap');
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --prim-col: #0eaeed;
+  --sec-col: #222240;
+  --third-col: #ff4500;
+}
+
+html, 
+body {
+  font-family: 'Onest', sans-serif;
+  background: var(--sec-col);
+  color: #add8e6;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+a{
+  color: #add8e6;
+  text-decoration: none;
+}
+
+ul { 
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
