@@ -9,15 +9,15 @@
 }
 
 :root {
-  --prim-col: #0eaeed;
-  --sec-col: #222240;
-  --third-col: #ff4500;
+  --primary: #0eaeed;
+  --secondary: #222240;
+  --tertiary: #ff4500;
 }
 
 html, 
 body {
   font-family: 'Onest', sans-serif;
-  background: var(--sec-col);
+  background: var(--secondary);
   color: #add8e6;
   line-height: 1.6;
   scroll-behavior: smooth;
