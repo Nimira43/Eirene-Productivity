@@ -12,19 +12,20 @@
   --primary: #0eaeed;
   --secondary: #222240;
   --tertiary: #ff4500;
+  --light: #b5e2f3;
 }
 
 html, 
 body {
   font-family: 'Onest', sans-serif;
   background: var(--secondary);
-  color: #add8e6;
+  color: var(--light);
   line-height: 1.6;
   scroll-behavior: smooth;
 }
 
 a{
-  color: #add8e6;
+  color: var(--light);
   text-decoration: none;
 }
 
@@ -34,4 +35,57 @@ ul {
 
 img {
   max-width: 100%;
+}
+
+.navbar {
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.navbar__logo h4 {
+  width: 112px;
+  height: 36px;
+  color: var(--primary);
+  font-size: 23px;
+  font-family: 'Protest Revolution', cursive;
+  font-weight: lighter;
+  letter-spacing: 2px;
+}
+
+.navbar__menu-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-weight: 300;  
+}
+
+.navbar__menu-link {
+  transition: color 0.6s ease;
+}
+
+.navbar__menu-link:hover {
+  color: var(--primary);
+}
+
+.navbar__menu-link--primary {
+  color: var(--primary);
+  transition: color 0.6s ease;
+}
+
+.navbar__menu-link--primary:hover {
+  color: var(--light);
 }
