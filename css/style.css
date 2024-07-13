@@ -12,6 +12,7 @@
   --primary: #0eaeed;
   --secondary: #222240;
   --tertiary: #ff4500;
+  --gold: #ffd700;
   --light: #b5e2f3;
 }
 
@@ -78,7 +79,7 @@ img {
   width: 112px;
   height: 36px;
   color: var(--primary);
-  text-shadow: 1.5px 1.5px 2px var(--tertiary);
+  text-shadow: 1.5px 1.5px 1.5px var(--light);
   font-size: 23px;
   font-family: 'Protest Revolution', cursive;
   font-weight: lighter;
