@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&family=Protest+Revolution&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=League+Spartan:wght@100..900&display=swap');
+
 
 *,
 *:before,
@@ -18,7 +19,7 @@
 
 html, 
 body {
-  font-family: 'Onest', sans-serif;
+  font-family: 'League Spartan', sans-serif;
   background: var(--secondary);
   color: var(--light);
   line-height: 1.6;
@@ -46,9 +47,9 @@ img {
 .btn {
   padding: 0.5rem 2rem;
   background-color: var(--primary);
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   color: var(--light);
-  font-weight: 600;
+  font-weight: 400;
   border-radius: 5px;
   transition: background-color 0.6s ease-in-out;
 }
@@ -76,13 +77,16 @@ img {
 }
 
 .navbar__logo h4 {
+  display: inline;
   width: 112px;
   height: 36px;
   color: var(--primary);
-  text-shadow: 1.5px 1.5px 1.5px var(--light);
+  background: var(--secondary);
+  padding: 4px 6px;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
   font-size: 23px;
-  font-family: 'Protest Revolution', cursive;
-  font-weight: lighter;
+  font-family: 'Fredericka the Great', serif;
   letter-spacing: 2px;
 }
 
@@ -93,8 +97,10 @@ img {
   font-weight: 300;  
 }
 
-.navbar__menu-link {
+.navbar__menu-link,
+.navbar__mobile-menu-link {
   transition: color 0.6s ease;
+  font-weight: 300;
 }
 
 .navbar__menu-link:hover,
@@ -178,7 +184,7 @@ img {
 .hero__title {
   font-size: 3.5rem;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.2;
 }
 
@@ -189,6 +195,7 @@ img {
 .hero__description {
   margin: 1.5rem;
   font-size: 1.2rem;
+  font-weight: 300;
   line-height: 1.6;
 }
 
