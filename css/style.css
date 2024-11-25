@@ -237,6 +237,9 @@ img {
   .hero__button {
     width: 100%;
   }
+  .hero__image img {
+    max-width: 350px;
+  }
 }
 
 @media (max-width: 768px) {
