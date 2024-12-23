@@ -3,3 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenu = document.querySelector('.navbar__mobile-menu-items')
   toggleBtn.addEventListener('click', () => mobileMenu.classList.toggle('active'))
 })
+
+window.addEventListener('scroll', function() {
+  const navbar = this.document.querySelector('.navbar')
+
+  if (window.scrollY > 0) {
+    navbar.classList.add('navbar--scroll')
+  } else {
+    navbar.classList.remove('navbar--scroll')
+  }
+})
