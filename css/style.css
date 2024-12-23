@@ -14,7 +14,8 @@
   --secondary: #222240;
   --tertiary: #ff4500;
   --gold: #ffd700;
-  --light: #b5e2f3;
+  --light: #fffaf0;
+  --dark: #111;
 }
 
 html, 
@@ -68,6 +69,12 @@ img {
   z-index: 1000;
   background-color: transparent;
   transition: background-color 0.6s ease-in-out;
+}
+
+.navbar.navbar--scroll {
+  background-color: rgba(0, 0, 0, 0.50);
+  background-color: rgba(34, 34, 64, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 .navbar__container {
