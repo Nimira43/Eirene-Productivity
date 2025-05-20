@@ -98,6 +98,8 @@ function drawAll() {
 
   drawBricks()
   
+  colourText(mouseX + ',' + mouseY, mouseX, mouseY, '#00ff00')
+
 }
 
 function colourRect(topLeftX, topLeftY, boxWidth, boxHeight, fillColour) {
@@ -110,4 +112,9 @@ function colourCircle(centreX, centreY, radius, fillColour) {
   ctx.beginPath()
   ctx.arc(centreX, centreY, 10, 0, Math.PI * 2, true)
   ctx.fill()
+}
+
+function colourText(showWords, textX, textY, fillColour) {
+  ctx.fillStyle = fillColour
+  ctx.fillText(showWords, textX, textY)
 }
