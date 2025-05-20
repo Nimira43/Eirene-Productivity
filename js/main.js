@@ -5,6 +5,7 @@ let ballSpeedY = 7
 
 const PADDLE_WIDTH = 100
 const PADDLE_THICKNESS = 10
+const PADDLE_DISTANCE_FROM_EDGE = 60
 let paddleX = 400
 let canvas, ctx
 
@@ -42,6 +43,11 @@ function moveAll() {
   if (ballX > canvas.width) ballSpeedX *= -1
   if (ballY < 0) ballSpeedY *= -1
   if (ballY > canvas.height) ballReset()
+  
+  let paddleTopEdgeY = canvas.height - PADDLE_DISTANCE_FROM_EDGE
+  let paddleBottomEdgeY = paddleTopEdgeY + PADDLE_THICKNESS
+  let paddleLeftEdgeX = paddleX
+  let paddleRightEdgeX = paddleLeftEdgeX + PADDLE_WIDTH
 }
 
 function drawAll() {
