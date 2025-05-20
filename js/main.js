@@ -3,6 +3,10 @@ let ballY = 75
 let ballSpeedX = 5
 let ballSpeedY = 7
 let canvas, ctx
+let paddleX = 400
+const PADDLE_WIDTH = 100
+const PADDLE_THICKNESS = 10
+
 
 window.onload = function () {
   canvas = document.getElementById('gameCanvas')
