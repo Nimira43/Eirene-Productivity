@@ -63,7 +63,7 @@ function drawAll() {
   colourRect(0, 0, canvas.width, canvas.height, '#000')
   colourCircle(ballX, ballY, 10, '#fff')
 
-  colourRect(paddleX, canvas.height - PADDLE_THICKNESS, PADDLE_WIDTH, PADDLE_THICKNESS, '#fff')
+  colourRect(paddleX, canvas.height - PADDLE_DISTANCE_FROM_EDGE, PADDLE_WIDTH, PADDLE_THICKNESS, '#fff')
 }
 
 function colourRect(topLeftX, topLeftY, boxWidth, boxHeight, fillColour) {
