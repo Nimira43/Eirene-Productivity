@@ -92,10 +92,10 @@ function moveAll() {
 }
 
 function drawBricks() {
-  colourRect(0, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
-  colourRect(BRICK_WIDTH, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
-  colourRect(BRICK_WIDTH * 2, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
-  colourRect(BRICK_WIDTH * 3, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
+  if (brick1) colourRect(0, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
+  if (brick2) colourRect(BRICK_WIDTH, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
+  if (brick3) colourRect(BRICK_WIDTH * 2, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
+  if (brick4) colourRect(BRICK_WIDTH * 3, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
 }
 
 function drawAll() {
