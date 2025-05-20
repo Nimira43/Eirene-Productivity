@@ -87,7 +87,10 @@ function moveAll() {
 }
 
 function drawBricks() {
-  colourRect(0, 0, BRICK_WIDTH, BRICK_HEIGHT, '#ff4500')
+  colourRect(0, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
+  colourRect(BRICK_WIDTH, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
+  colourRect(BRICK_WIDTH * 2, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
+  colourRect(BRICK_WIDTH * 3, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
 }
 
 function drawAll() {
