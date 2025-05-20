@@ -11,7 +11,12 @@ window.onload = function () {
   setInterval(updateAll, 1000 / fps)
 }
 
-function updateAll() { 
+function updateAll() {
+  moveAll()
+  drawAll()
+}
+
+function moveAll() {
   ballX += ballSpeedX
   ballY += ballSpeedY
 
@@ -19,7 +24,9 @@ function updateAll() {
   if (ballX > canvas.width) ballSpeedX *= -1
   if (ballY < 0) ballSpeedY *= -1
   if (ballY > canvas.height) ballSpeedY *= -1
-  
+}
+
+function drawAll() {
   ctx.fillStyle = 'black'
   ctx.fillRect(0, 0, canvas.width, canvas.height)
   ctx.fillStyle = 'white'
