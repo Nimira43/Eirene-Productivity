@@ -35,7 +35,11 @@ function drawAll() {
   ctx.fill()
 }
 
-function colourRect() {}
+function colourRect(topLeftX, topLeftY, boxWidth, boxHeight, fillColour) {
+  ctx.fillStyle = fillColour
+  ctx.fillRect(topLeftX, topLeftY, boxWidth, boxHeight)
+}
+
 function colourCircle(centreX, centreY, radius, fillColour) {
   ctx.fillStyle = fillColour
   ctx.beginPath()
