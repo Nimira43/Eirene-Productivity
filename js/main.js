@@ -3,6 +3,10 @@ let ballY = 75
 let ballSpeedX = 5
 let ballSpeedY = 7
 
+const BRICK_WIDTH = 100
+const BRICK_HEIGHT = 50
+const BRICK_COUNT = 4
+
 const PADDLE_WIDTH = 100
 const PADDLE_THICKNESS = 10
 const PADDLE_DISTANCE_FROM_EDGE = 60
@@ -25,7 +29,7 @@ function updatePaddleMovement(event) {
   }
 
   if (paddleX < 0) {
-    paddleX = 0;''
+    paddleX = 0
   } else if (paddleX > canvas.width - PADDLE_WIDTH) {
     paddleX = canvas.width - PADDLE_WIDTH
   }
