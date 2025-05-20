@@ -34,3 +34,6 @@ function drawAll() {
   ctx.arc(ballX, ballY, 10, 0, Math.PI * 2, true)
   ctx.fill()
 }
+
+function colourRect() {}
+function colourCircle() {}
