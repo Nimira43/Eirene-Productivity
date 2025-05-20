@@ -87,19 +87,18 @@ function moveAll() {
 }
 
 function drawBricks() {
-  colourRect(0, 0, BRICK_WIDTH, BRICK_HEIGHT, '#fff')
+  colourRect(0, 0, BRICK_WIDTH, BRICK_HEIGHT, '#ff4500')
 }
 
 function drawAll() {
   colourRect(0, 0, canvas.width, canvas.height, '#000')
-  colourCircle(ballX, ballY, 10, '#fff')
+  colourCircle(ballX, ballY, 10, '#ffd700')
 
   colourRect(paddleX, canvas.height - PADDLE_DISTANCE_FROM_EDGE, PADDLE_WIDTH, PADDLE_THICKNESS, '#fff')
 
   drawBricks()
   
-  colourText(mouseX + ',' + mouseY, mouseX, mouseY, '#00ff00')
-
+  colourText(mouseX + ',' + mouseY, mouseX, mouseY, '#008080')
 }
 
 function colourRect(topLeftX, topLeftY, boxWidth, boxHeight, fillColour) {
