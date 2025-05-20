@@ -24,8 +24,8 @@ let mouseY = 0
 function updateMousePos(event) {
   let rect = canvas.getBoundingClientRect()
   let root = document.documentElement
-  let mouseX = event.clientX = rect.left - root.scrollLeft
-  let mouseY = event.clientY = rect.top - root.scrollTop
+  mouseX = event.clientX = rect.left - root.scrollLeft
+  mouseY = event.clientY = rect.top - root.scrollTop
   paddleX = mouseX - PADDLE_WIDTH / 2
 }
 
@@ -92,17 +92,17 @@ function moveAll() {
 }
 
 function drawBricks() {
-  if (brick1) colourRect(0, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
-  if (brick2) colourRect(BRICK_WIDTH, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
-  if (brick3) colourRect(BRICK_WIDTH * 2, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
-  if (brick4) colourRect(BRICK_WIDTH * 3, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
+  if (brick0) colourRect(0, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
+  if (brick1) colourRect(BRICK_WIDTH, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
+  if (brick2) colourRect(BRICK_WIDTH * 2, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
+  if (brick3) colourRect(BRICK_WIDTH * 3, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
 }
 
 function drawAll() {
   colourRect(0, 0, canvas.width, canvas.height, '#000')
   colourCircle(ballX, ballY, 10, '#ffd700')
 
-  colourRect(paddleX, canvas.height - PADDLE_DISTANCE_FROM_EDGE, PADDLE_WIDTH, PADDLE_THICKNESS, '#fff')
+  colourRect(paddleX, canvas.height - PADDLE_DISTANCE_FROM_EDGE, PADDLE_WIDTH, PADDLE_THICKNESS, '#fffcfa')
 
   drawBricks()
   
