@@ -7,6 +7,11 @@ const BRICK_WIDTH = 100
 const BRICK_HEIGHT = 50
 const BRICK_COUNT = 4
 
+let brick1 = true
+let brick2 = false
+let brick3 = false
+let brick4 = true
+
 const PADDLE_WIDTH = 100
 const PADDLE_THICKNESS = 10
 const PADDLE_DISTANCE_FROM_EDGE = 60
