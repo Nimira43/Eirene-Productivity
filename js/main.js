@@ -6,14 +6,29 @@ let ballSpeedY = 7
 const PADDLE_WIDTH = 100
 const PADDLE_THICKNESS = 10
 const PADDLE_DISTANCE_FROM_EDGE = 60
+const PADDLE_SPEED = 30 // key based movement.
 let paddleX = 400
 let canvas, ctx
 
-function updateMousePos(event) {
-  let rect = canvas.getBoundingClientRect()
-  let root = document.documentElement
-  let mouseX = event.clientX = rect.left - root.scrollLeft
-  paddleX = mouseX - PADDLE_WIDTH / 2
+// function updateMousePos(event) {
+//   let rect = canvas.getBoundingClientRect()
+//   let root = document.documentElement
+//   let mouseX = event.clientX = rect.left - root.scrollLeft
+//   paddleX = mouseX - PADDLE_WIDTH / 2
+// }
+
+function updatePaddleMovement(event) {
+  if (event.key === 'ArrowLeft') {
+    paddleX -= PADDLE_SPEED
+  } else if (event.key === 'ArrowRight') {
+    paddleX += PADDLE_SPEED
+  }
+
+  if (paddleX < 0) {
+    paddleX = 0;''
+  } else if (paddleX > canvas.width - PADDLE_WIDTH) {
+    paddleX = canvas.width - PADDLE_WIDTH
+  }
 }
 
 window.onload = function () {
@@ -22,7 +37,9 @@ window.onload = function () {
   let fps = 30
   setInterval(updateAll, 1000 / fps)
 
-  canvas.addEventListener('mousemove', updateMousePos)
+  // canvas.addEventListener('mousemove', updateMousePos)    = old movement
+
+  document.addEventListener('keydown', updatePaddleMovement)
 }
 
 function updateAll() {
