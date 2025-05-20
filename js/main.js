@@ -7,6 +7,13 @@ let paddleX = 400
 const PADDLE_WIDTH = 100
 const PADDLE_THICKNESS = 10
 
+function updateMousePos(event) {
+  let rect = canvas.getBoundingClientRect()
+  let root = document.documentElement()
+  let mouseX = event.clientX = rect.left - root.scrollLeft
+  paddleX = mouseX - PADDLE_WIDTH / 2
+}
+
 
 window.onload = function () {
   canvas = document.getElementById('gameCanvas')
