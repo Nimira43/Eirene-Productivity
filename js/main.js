@@ -56,6 +56,10 @@ function moveAll() {
     ballX < paddleRightEdgeX
   ) {
     ballSpeedY *= -1
+
+    let centreOfPaddleX = paddleX + PADDLE_WIDTH / 2
+    let ballDistanceFromPaddleCentreX = ballX - centreOfPaddleX
+    ballSpeedX = ballDistanceFromPaddleCentreX * 0.35
   }
 }
 
