@@ -48,6 +48,15 @@ function moveAll() {
   let paddleBottomEdgeY = paddleTopEdgeY + PADDLE_THICKNESS
   let paddleLeftEdgeX = paddleX
   let paddleRightEdgeX = paddleLeftEdgeX + PADDLE_WIDTH
+
+  if (
+    ballY > paddleTopEdgeY &&
+    ballY < paddleBottomEdgeY &&
+    ballX > paddleLeftEdgeX &&
+    ballX < paddleRightEdgeX
+  ) {
+    ballSpeedY *= -1
+  }
 }
 
 function drawAll() {
