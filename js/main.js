@@ -36,4 +36,9 @@ function drawAll() {
 }
 
 function colourRect() {}
-function colourCircle() {}
+function colourCircle(centreX, centreY, radius, fillColour) {
+  ctx.fillStyle = fillColour
+  ctx.beginPath()
+  ctx.arc(centreX, centreY, 10, 0, Math.PI * 2, true)
+  ctx.fill()
+}
