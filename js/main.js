@@ -2,14 +2,15 @@ let ballX = 75
 let ballY = 75
 let ballSpeedX = 5
 let ballSpeedY = 7
-let canvas, ctx
-let paddleX = 400
+
 const PADDLE_WIDTH = 100
 const PADDLE_THICKNESS = 10
+let paddleX = 400
+let canvas, ctx
 
 function updateMousePos(event) {
   let rect = canvas.getBoundingClientRect()
-  let root = document.documentElement()
+  let root = document.documentElement
   let mouseX = event.clientX = rect.left - root.scrollLeft
   paddleX = mouseX - PADDLE_WIDTH / 2
 }
@@ -17,7 +18,7 @@ function updateMousePos(event) {
 window.onload = function () {
   canvas = document.getElementById('gameCanvas')
   ctx = canvas.getContext('2d')
-  fps = 30
+  let fps = 30
   setInterval(updateAll, 1000 / fps)
 
   canvas.addEventListener('mousemove', updateMousePos)
@@ -28,6 +29,11 @@ function updateAll() {
   drawAll()
 }
 
+function ballReset() {
+  ballX = canvas.width / 2
+  ballY = canvas.height / 2
+}
+
 function moveAll() {
   ballX += ballSpeedX
   ballY += ballSpeedY
@@ -35,12 +41,14 @@ function moveAll() {
   if (ballX < 0) ballSpeedX *= -1
   if (ballX > canvas.width) ballSpeedX *= -1
   if (ballY < 0) ballSpeedY *= -1
-  if (ballY > canvas.height) ballSpeedY *= -1
+  if (ballY > canvas.height) ballReset()
 }
 
 function drawAll() {
   colourRect(0, 0, canvas.width, canvas.height, '#000')
   colourCircle(ballX, ballY, 10, '#fff')
+
+  colourRect(paddleX, canvas.height - PADDLE_THICKNESS, PADDLE_WIDTH, PADDLE_THICKNESS, '#fff')
 }
 
 function colourRect(topLeftX, topLeftY, boxWidth, boxHeight, fillColour) {
