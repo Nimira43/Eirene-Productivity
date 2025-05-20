@@ -14,12 +14,13 @@ function updateMousePos(event) {
   paddleX = mouseX - PADDLE_WIDTH / 2
 }
 
-
 window.onload = function () {
   canvas = document.getElementById('gameCanvas')
   ctx = canvas.getContext('2d')
   fps = 30
   setInterval(updateAll, 1000 / fps)
+
+  canvas.addEventListener('mousemove', updateMousePos)
 }
 
 function updateAll() {
