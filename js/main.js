@@ -13,13 +13,16 @@ const PADDLE_DISTANCE_FROM_EDGE = 60
 const PADDLE_SPEED = 30 // key based movement.
 let paddleX = 400
 let canvas, ctx
+let mouseX = 0
+let mouseY = 0
 
-// function updateMousePos(event) {
-//   let rect = canvas.getBoundingClientRect()
-//   let root = document.documentElement
-//   let mouseX = event.clientX = rect.left - root.scrollLeft
-//   paddleX = mouseX - PADDLE_WIDTH / 2
-// }
+function updateMousePos(event) {
+  let rect = canvas.getBoundingClientRect()
+  let root = document.documentElement
+  let mouseX = event.clientX = rect.left - root.scrollLeft
+  let mouseY = event.clientY = rect.top - root.scrollTop
+  paddleX = mouseX - PADDLE_WIDTH / 2
+}
 
 function updatePaddleMovement(event) {
   if (event.key === 'ArrowLeft') {
@@ -41,8 +44,7 @@ window.onload = function () {
   let fps = 30
   setInterval(updateAll, 1000 / fps)
 
-  // canvas.addEventListener('mousemove', updateMousePos)    = old movement
-
+  canvas.addEventListener('mousemove', updateMousePos)    
   document.addEventListener('keydown', updatePaddleMovement)
 }
 
@@ -84,11 +86,18 @@ function moveAll() {
   }
 }
 
+function drawBricks() {
+  colourRect(0, 0, BRICK_WIDTH, BRICK_HEIGHT, '#fff')
+}
+
 function drawAll() {
   colourRect(0, 0, canvas.width, canvas.height, '#000')
   colourCircle(ballX, ballY, 10, '#fff')
 
   colourRect(paddleX, canvas.height - PADDLE_DISTANCE_FROM_EDGE, PADDLE_WIDTH, PADDLE_THICKNESS, '#fff')
+
+  drawBricks()
+  
 }
 
 function colourRect(topLeftX, topLeftY, boxWidth, boxHeight, fillColour) {
