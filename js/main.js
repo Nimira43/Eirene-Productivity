@@ -8,4 +8,8 @@ window.onload = function () {
   setInterval(updateAll, 1000 / fps)
 }
 
-function updateAll() { }
+function updateAll() { 
+  ctx.fillStyle = 'black'
+  ctx.fillRect(0, 0, canvas.width, canvas.height)
+  
+}
