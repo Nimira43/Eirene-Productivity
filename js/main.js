@@ -1,4 +1,7 @@
 let ballX = 75
+let ballY = 75
+let ballSpeedX = 5
+let ballSpeedY = 7
 let canvas, ctx
 
 window.onload = function () {
@@ -9,6 +12,14 @@ window.onload = function () {
 }
 
 function updateAll() { 
+  ballX += ballSpeedX
+  ballY += ballSpeedY
+
+  if (ballX < 0) ballSpeedX *= -1
+  if (ballX > canvas.width) ballSpeedX *= -1
+  if (ballY < 0) ballSpeedY *= -1
+  if (ballX > canvas.height) ballSpeedX *= -1
+  
   ctx.fillStyle = 'black'
   ctx.fillRect(0, 0, canvas.width, canvas.height)
   ctx.fillStyle = 'white'
