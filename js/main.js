@@ -16,7 +16,7 @@ function initialiseGame() {
   document.addEventListener('keydown', updatePaddleMovement)
   brickReset() 
   ballReset()
-  gameLoop()
+  startNewGame()
 }
 
 function updatePaddleMovement(event) {
@@ -157,6 +157,11 @@ function gameLoop() {
   updateAll()
   drawGame()
   requestAnimationFrame(gameLoop) 
+}
+
+function startNewGame() {
+  gameRunning = true
+  gameLoop()
 }
 
 window.onload = initialiseGame
