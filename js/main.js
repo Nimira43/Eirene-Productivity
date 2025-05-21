@@ -56,59 +56,15 @@ function moveBall() {
   }
 }
 
-function isBrickAtColRow(col, row) {
-  if (
-    col >= 0 &&
-    col < BRICK_COLS &&
-    row >= 0 &&
-    row < BRICK_ROWS
-  ) {
-    let brickIndexUnderCoord = rowColToArrayIndex(col, row)
-    return brickGrid[brickIndexUnderCoord]
-  } else {
-    return false
-  }
-}
+function checkBrickCollision() {
+  let ball = GAME_SETTINGS.BALL
+  let col = Math.floor(ball.x / GAME_SETTINGS.BRICK.width)
+  let row = Math.floor(ball.y / GAME_SETTINGS.BRICK.height)
+  let index = row * GAME_SETTINGS.BRICK.cols + col
 
-function ballBrickHandling() {
-  let ballBrickCol = Math.floor(ballX / BRICK_WIDTH)
-  let ballBrickRow = Math.floor(ballY / BRICK_HEIGHT)
-  let brickIndexUnderBall = rowColToArrayIndex(ballBrickCol, ballBrickRow) 
-  
-  if (
-    ballBrickCol >= 0 &&
-    ballBrickCol < BRICK_COLS &&
-    ballBrickRow >= 0 &&
-    ballBrickRow < BRICK_ROWS
-  ) {
-    if (isBrickAtColRow(ballBrickCol, ballBrickRow)) {
-      brickGrid[brickIndexUnderBall] = false
-      bricksLeft--
-    
-      let prevBallX = ballX - ballSpeedX
-      let prevBallY = ballY - ballSpeedY
-      let prevBrickCol = Math.floor(prevBallX / BRICK_WIDTH)
-      let prevBrickRow = Math.floor(prevBallY / BRICK_HEIGHT)
-
-      let bothTestsFailed = true
-
-      if (prevBrickCol != ballBrickCol) {
-        if (isBrickAtColRow(prevBrickCol, ballBrickRow) == false) {
-          ballSpeedX *= -1
-          bothTestsFailed = false
-        }
-      }
-      if (prevBrickRow != ballBrickRow) {
-        if (isBrickAtColRow(prevBrickCol, ballBrickRow) == false) {
-          ballSpeedY *= -1
-          bothTestsFailed = false
-        }
-      }
-      if (bothTestsFailed) {
-        ballSpeedX *= -1
-        ballSpeedY *= -1
-      }
-    }
+  if (brickGrid[index]) {
+    brickGrid[index] = false
+    ball.speedY *= -1
   }
 }
 
