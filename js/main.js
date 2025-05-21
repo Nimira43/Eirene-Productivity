@@ -23,8 +23,8 @@ let mouseY = 0
 function updateMousePos(event) {
   let rect = canvas.getBoundingClientRect()
   let root = document.documentElement
-  mouseX = event.clientX = rect.left - root.scrollLeft
-  mouseY = event.clientY = rect.top - root.scrollTop
+  mouseX = event.clientX - rect.left - root.scrollLeft
+  mouseY = event.clientY - rect.top - root.scrollTop
   paddleX = mouseX - PADDLE_WIDTH / 2
 }
 
