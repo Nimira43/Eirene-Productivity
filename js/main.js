@@ -88,7 +88,10 @@ function moveAll() {
     ballBrickRow >= 0 &&
     ballBrickRow < BRICK_ROWS
   ) {
-    brickGrid[brickIndexUnderBall] = false
+    if (brickGrid[brickIndexUnderBall]) {
+      brickGrid[brickIndexUnderBall] = false
+      ballSpeedY *= -1
+    }
   }
   
   let paddleTopEdgeY = canvas.height - PADDLE_DISTANCE_FROM_EDGE
