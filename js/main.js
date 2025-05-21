@@ -10,6 +10,7 @@ const BRICK_COLS = 10
 const BRICK_ROWS = 7
 
 let brickGrid = new Array(BRICK_COLS * BRICK_ROWS)
+let bricksLeft = 0
 
 const PADDLE_WIDTH = 100
 const PADDLE_THICKNESS = 10
