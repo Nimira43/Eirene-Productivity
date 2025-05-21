@@ -218,3 +218,9 @@ function colourText(showWords, textX, textY, fillColour) {
   ctx.fillStyle = fillColour
   ctx.fillText(showWords, textX, textY)
 }
+
+function gameLoop() {
+  updateAll()
+  drawGame()
+  requestAnimationFrame(gameLoop) 
+}
