@@ -138,21 +138,6 @@ function drawAll() {
   colourRect(paddleX, canvas.height - PADDLE_DISTANCE_FROM_EDGE, PADDLE_WIDTH, PADDLE_THICKNESS, '#fffcfa')
 
   drawBricks()
-
-  // let mouseBrickCol = Math.floor(mouseX / BRICK_WIDTH)
-  // let mouseBrickRow = Math.floor(mouseY / BRICK_HEIGHT)
-  // let brickIndexUnderMouse = rowColToArrayIndex(mouseBrickCol, mouseBrickRow)
-
-  // colourText(
-  //   `${mouseBrickCol},${mouseBrickRow}: ${ brickIndexUnderMouse}`, mouseX, mouseY, '#fff'
-  // )
-
-  // if (
-  //   brickIndexUnderMouse >= 0 &&
-  //   brickIndexUnderMouse < BRICK_COLS * BRICK_ROWS
-  // ) {
-  //   brickGrid[brickIndexUnderMouse] = false
-  // }
 }
 
 function colourRect(topLeftX, topLeftY, boxWidth, boxHeight, fillColour) {
