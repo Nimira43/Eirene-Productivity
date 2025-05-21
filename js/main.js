@@ -69,7 +69,9 @@ function ballReset() {
   ballY = canvas.height / 2
 }
 
-function moveAll() {
+// Split up moveAll function
+
+function ballMove() {
   ballX += ballSpeedX
   ballY += ballSpeedY
 
@@ -77,7 +79,8 @@ function moveAll() {
   if (ballX > canvas.width) ballSpeedX *= -1
   if (ballY < 0) ballSpeedY *= -1
   if (ballY > canvas.height) ballReset()
-  
+}
+
   let ballBrickCol = Math.floor(ballX / BRICK_WIDTH)
   let ballBrickRow = Math.floor(ballY / BRICK_HEIGHT)
   let brickIndexUnderBall = rowColToArrayIndex(ballBrickCol, ballBrickRow) 
