@@ -6,8 +6,9 @@ let ballSpeedY = 7
 const BRICK_WIDTH = 100
 const BRICK_HEIGHT = 50
 const BRICK_GAP = 2
-const BRICK_COUNT = 8
+const BRICK_COLS = 8
 const BRICK_ROWS = 4
+
 
 let brickGrid = new Array(BRICK_COUNT)
 
@@ -34,7 +35,6 @@ function updatePaddleMovement(event) {
   } else if (event.key === 'ArrowRight') {
     paddleX += PADDLE_SPEED
   }
-
   if (paddleX < 0) {
     paddleX = 0
   } else if (paddleX > canvas.width - PADDLE_WIDTH) {
@@ -100,7 +100,7 @@ function moveAll() {
 
 function drawBricks() {
   for (let eachRow = 0; eachRow < BRICK_ROWS; eachRow++) {
-    for (let i = 0; i < BRICK_COUNT; i++) {
+    for (let eachCol = 0; eachCol < BRICK_COUNT; i++) {
       if (brickGrid[i]) {
         colourRect(
           BRICK_WIDTH * i,
