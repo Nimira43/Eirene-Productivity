@@ -146,23 +146,6 @@ function rowColToArrayIndex(col, row) {
   return col + BRICK_COLS * row
 }
 
-function drawBricks() {
-  for (let eachRow = 0; eachRow < BRICK_ROWS; eachRow++) {
-    for (let eachCol = 0; eachCol < BRICK_COLS; eachCol++) {
-      let arrayIndex = rowColToArrayIndex(eachCol, eachRow)
-      if (brickGrid[arrayIndex]) {
-        colourRect(
-          BRICK_WIDTH * eachCol,
-          BRICK_HEIGHT * eachRow,
-          BRICK_WIDTH - BRICK_GAP,
-          BRICK_HEIGHT - BRICK_GAP,
-          '#ff4500'
-        )
-      }
-    }
-  }  
-}
-
 
 function drawGame() {
   ctx.fillStyle = '#000'
