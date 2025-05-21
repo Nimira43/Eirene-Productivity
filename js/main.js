@@ -130,9 +130,13 @@ function drawAll() {
 
   drawBricks()
 
-  let mouseBrickCol = mouseX / BRICK_WIDTH
-  let mouseBrickRow = mouseY / BRICK_HEIGHT
-  colourText(mouseBrickCol + ',' + mouseBrickRow, mouseX, mouseY, '#fff')
+  let mouseBrickCol = Math.floor(mouseX / BRICK_WIDTH)
+  let mouseBrickRow = Math.floor(mouseY / BRICK_HEIGHT)
+  let brickIndexUnderMouse = rowColToArrayIndex(mouseBrickCol, mouseBrickRow)
+  
+  colourText(
+    `${mouseBrickCol},${mouseBrickRow}: ${ brickIndexUnderMouse}`, mouseX, mouseY, '#fff'
+  )
 }
 
 function colourRect(topLeftX, topLeftY, boxWidth, boxHeight, fillColour) {
