@@ -9,7 +9,7 @@ const BRICK_GAP = 2
 const BRICK_COLS = 8
 const BRICK_ROWS = 4
 
-let brickGrid = new Array(BRICK_COLS)
+let brickGrid = new Array(BRICK_COLS * BRICK_ROWS)
 
 const PADDLE_WIDTH = 100
 const PADDLE_THICKNESS = 10
