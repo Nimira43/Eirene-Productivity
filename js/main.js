@@ -119,6 +119,11 @@ function ballPaddleHandling() {
   } 
 }
   
+function moveAll() {
+  ballMove()
+  ballBrickHandling()
+  ballPaddleHandling()
+}
   
 
 
