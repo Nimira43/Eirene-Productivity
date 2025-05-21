@@ -102,8 +102,27 @@ function ballBrickHandling() {
       let prevBallY = ballY - ballSpeedY
       let prevBrickCol = Math.floor(prevBallX / BRICK_WIDTH)
       let prevBrickRow = Math.floor(prevBallY / BRICK_HEIGHT)
-      if (prevBrickCol != ballBrickCol) ballSpeedX *= -1
-      if (prevBrickRow != ballBrickRow) ballSpeedY *= -1
+
+      let bothTestsFailed = true
+
+      if (prevBrickCol != ballBrickCol) {
+        let adjBrickSide = rowColToArrayIndex(prevBrickCol, ballBrickRow)
+        if (brickGrid[adjBrickSide] == false) {
+          ballSpeedX *= -1
+          bothTestsFailed = false
+        }
+      }
+      if (prevBrickRow != ballBrickRow) {
+        let adjBrickTopBottom = rowColToArrayIndex(prevBrickCol, ballBrickRow)
+        if (brickGrid[adjBrickTopBottom] == false) {
+          ballSpeedY *= -1
+          bothTestsFailed = false
+        }
+      }
+      if (bothTestsFailed) {
+        ballSpeedX *= -1
+        ballSpeedY *= -1
+      }
     }
   }
 }
