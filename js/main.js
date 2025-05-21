@@ -25,6 +25,17 @@ let brickGrid = Array(GAME_SETTINGS.BRICK.cols * GAME_SETTINGS.BRICK.rows).fill(
 // let paddleX = 400
 let canvas, ctx
 
+function initialiseGame() {
+  canvas = document.getElementById('gameCanvas')
+  ctx = canvas.getContext('2d')
+  // let fps = 30
+  // setInterval(updateAll, 1000 / fps)   
+  document.addEventListener('keydown', updatePaddleMovement)
+  brickReset() 
+  ballReset()
+  gameLoop()}
+
+
 function updatePaddleMovement(event) {
   if (event.key === 'ArrowLeft') {
     paddleX -= PADDLE_SPEED
@@ -54,16 +65,16 @@ function brickReset() {
   }
 }
 
-window.onload = function () {
-  canvas = document.getElementById('gameCanvas')
-  ctx = canvas.getContext('2d')
-  let fps = 30
-  setInterval(updateAll, 1000 / fps)   
-  document.addEventListener('keydown', updatePaddleMovement)
+// window.onload = function () {
+//   canvas = document.getElementById('gameCanvas')
+//   ctx = canvas.getContext('2d')
+//   let fps = 30
+//   setInterval(updateAll, 1000 / fps)   
+//   document.addEventListener('keydown', updatePaddleMovement)
 
-  brickReset() 
-  ballReset()
-}
+//   brickReset() 
+//   ballReset()
+// }
 
 function updateAll() {
   moveAll()
@@ -224,3 +235,5 @@ function gameLoop() {
   drawGame()
   requestAnimationFrame(gameLoop) 
 }
+
+window.onload = initialiseGame
