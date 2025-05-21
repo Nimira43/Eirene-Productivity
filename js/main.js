@@ -170,6 +170,43 @@ function drawAll() {
   drawBricks()
 }
 
+function drawGame() {
+  ctx.fillStyle = '#000'
+  ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+  ctx.fillStyle = '#ffd700'
+  ctx.beginPath()
+  ctx.arc(
+    GAME_SETTINGS.BALL.x,
+    GAME_SETTINGS.BALL.y,
+    GAME_SETTINGS.BALL.radius,
+    0,
+    Math.PI * 2
+  )
+  ctx.fill()
+
+  ctx.fillStyle = '#fffcfa'
+  ctx.fillRect(
+    GAME_SETTINGS.PADDLE.x,
+    canvas.height - GAME_SETTINGS.PADDLE.distanceFromEdge,
+    GAME_SETTINGS.PADDLE.width,
+    GAME_SETTINGS.PADDLE.thickness
+  )
+
+  brickGrid.forEach((brick, i) => {
+    if (brick) {
+      let col = i % GAME_SETTINGS.BRICK.cols
+      let row = Math.floor(i / GAME_SETTINGS.BRICK.cols)
+      ctx.fillStyle = '#ff4500'
+      ctx.fillRect(
+        GAME_SETTINGS.BRICK.width * col,
+        GAME_SETTINGS.BRICK.height * row,
+        GAME_SETTINGS.BRICK.width - GAME_SETTINGS.BRICK.gap,
+        GAME_SETTINGS.BRICK.height - GAME_SETTINGS.BRICK.gap
+      )
+    }
+  })
+}
 
 function gameLoop() {
   updateAll()
