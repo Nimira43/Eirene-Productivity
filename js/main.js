@@ -169,6 +169,10 @@ function ballPaddleHandling() {
     let centreOfPaddleX = paddleX + PADDLE_WIDTH / 2
     let ballDistanceFromPaddleCentreX = ballX - centreOfPaddleX
     ballSpeedX = ballDistanceFromPaddleCentreX * 0.35
+
+    if (bricksLeft == 0) {
+      brickReset()
+    }
   } 
 }
   
