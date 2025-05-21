@@ -99,10 +99,10 @@ function moveAll() {
 
 function drawBricks() {
   for (let eachRow = 0; eachRow < BRICK_ROWS; eachRow++) {
-    for (let eachCol = 0; eachCol < BRICK_COUNT; i++) {
-      if (brickGrid[i]) {
+    for (let eachCol = 0; eachCol < BRICK_COLS; eachCol++) {
+      if (brickGrid[eachCol]) {
         colourRect(
-          BRICK_WIDTH * i,
+          BRICK_WIDTH * eachCol,
           BRICK_HEIGHT * eachRow,
           BRICK_WIDTH - BRICK_GAP,
           BRICK_HEIGHT - BRICK_GAP,
