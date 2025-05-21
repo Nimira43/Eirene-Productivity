@@ -20,7 +20,7 @@ function updatePaddleMovement(event) {
   let { PADDLE } = GAME_SETTINGS
   
   if (event.key === 'ArrowLeft') {
-    PADDLE.x -= PADDLE.speed;
+    PADDLE.x -= PADDLE.speed
     PADDLE.x = Math.max(0, PADDLE.x)
   } 
   else if (event.key === 'ArrowRight') {
@@ -32,11 +32,6 @@ function updatePaddleMovement(event) {
 function brickReset() {
   brickGrid = brickGrid.map((_, i) => (Math.floor(i / GAME_SETTINGS.BRICK.cols) < 3 ? false : true))
 }
-
-// function updateAll() {
-//   moveAll()
-//   drawAll()
-// }
 
 function ballReset() {
   GAME_SETTINGS.BALL.x = canvas.width / 2
@@ -82,6 +77,12 @@ function checkPaddleCollision() {
     ball.speedY *= -1
     ball.speedX = (ball.x - (paddle.x + paddle.width / 2)) * 0.35
   }
+}
+
+function updateAll() {
+  moveBall()
+  checkBrickCollision()
+  checkPaddleCollision()
 }
   
 function drawGame() {
