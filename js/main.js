@@ -33,14 +33,14 @@ function brickReset() {
   brickGrid = brickGrid.map((_, i) => (Math.floor(i / GAME_SETTINGS.BRICK.cols) < 3 ? false : true));
 }
 
-function updateAll() {
-  moveAll()
-  drawAll()
-}
+// function updateAll() {
+//   moveAll()
+//   drawAll()
+// }
 
 function ballReset() {
-  ballX = canvas.width / 2
-  ballY = canvas.height / 2
+  GAME_SETTINGS.BALL.x = canvas.width / 2;
+  GAME_SETTINGS.BALL.y = canvas.height / 2;
 }
 
 function ballMove() {
