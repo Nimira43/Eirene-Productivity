@@ -9,7 +9,6 @@ const BRICK_GAP = 2
 const BRICK_COLS = 8
 const BRICK_ROWS = 4
 
-
 let brickGrid = new Array(BRICK_COUNT)
 
 const PADDLE_WIDTH = 100
@@ -43,7 +42,7 @@ function updatePaddleMovement(event) {
 }
 
 function brickReset() {
-  for (var i = 0; i < BRICK_COUNT; i++) {
+  for (var i = 0; i < BRICK_COLS; i++) {
     brickGrid[i] = true
   }
 }
