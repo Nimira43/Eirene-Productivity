@@ -76,7 +76,6 @@ function brickReset() {
   }
 }
 
-
 window.onload = function () {
   canvas = document.getElementById('gameCanvas')
   ctx = canvas.getContext('2d')
@@ -87,6 +86,7 @@ window.onload = function () {
   document.addEventListener('keydown', updatePaddleMovement)
 
   brickReset() 
+  ballReset()
 }
 
 function updateAll() {
