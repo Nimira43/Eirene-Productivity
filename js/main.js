@@ -43,11 +43,7 @@ function updatePaddleMovement(event) {
 
 function brickReset() {
   for (var i = 0; i < BRICK_COLS * BRICK_ROWS; i++) {
-    if (Math.random() < 0.5) {
-      brickGrid[i] = true
-    } else {
-      brickGrid[i] = false
-    }
+    brickGrid[i] = true    
   }
 }
 
@@ -133,7 +129,7 @@ function drawAll() {
   let mouseBrickCol = Math.floor(mouseX / BRICK_WIDTH)
   let mouseBrickRow = Math.floor(mouseY / BRICK_HEIGHT)
   let brickIndexUnderMouse = rowColToArrayIndex(mouseBrickCol, mouseBrickRow)
-  
+
   colourText(
     `${mouseBrickCol},${mouseBrickRow}: ${ brickIndexUnderMouse}`, mouseX, mouseY, '#fff'
   )
