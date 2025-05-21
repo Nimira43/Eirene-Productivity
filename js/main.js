@@ -30,7 +30,7 @@ function updatePaddleMovement(event) {
 }
   
 function brickReset() {
-  brickGrid = brickGrid.map((_, i) => (Math.floor(i / GAME_SETTINGS.BRICK.cols) < 3 ? false : true));
+  brickGrid = brickGrid.map((_, i) => (Math.floor(i / GAME_SETTINGS.BRICK.cols) < 3 ? false : true))
 }
 
 // function updateAll() {
@@ -39,18 +39,18 @@ function brickReset() {
 // }
 
 function ballReset() {
-  GAME_SETTINGS.BALL.x = canvas.width / 2;
-  GAME_SETTINGS.BALL.y = canvas.height / 2;
+  GAME_SETTINGS.BALL.x = canvas.width / 2
+  GAME_SETTINGS.BALL.y = canvas.height / 2
 }
 
-function ballMove() {
-  ballX += ballSpeedX
-  ballY += ballSpeedY
+function moveBall() {
+  let ball = GAME_SETTINGS.BALL
+  ball.x += ball.speedX
+  ball.y += ball.speedY
 
-  if (ballX < 0 && ballSpeedX < 0.0) ballSpeedX *= -1
-  if (ballX > canvas.width && ballSpeedX > 0.0) ballSpeedX *= -1
-  if (ballY < 0 && ballSpeedY < 0.0) ballSpeedY *= -1
-  if (ballY > canvas.height) {
+  if (ball.x < 0 || ball.x > canvas.width) ball.speedX *= -1
+  if (ball.y < 0) ball.speedY *= -1
+  if (ball.y > canvas.height) {
     ballReset()
     brickReset()
   }
