@@ -7,6 +7,7 @@ const BRICK_WIDTH = 100
 const BRICK_HEIGHT = 50
 const BRICK_GAP = 2
 const BRICK_COUNT = 8
+const BRICK_ROWS = 4
 
 let brickGrid = new Array(BRICK_COUNT)
 
