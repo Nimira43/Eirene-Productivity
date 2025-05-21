@@ -5,7 +5,7 @@ let ballSpeedY = 7
 
 const BRICK_WIDTH = 100
 const BRICK_HEIGHT = 50
-const BRICK_COUNT = 5
+const BRICK_COUNT = 8
 
 let brickGrid = new Array(BRICK_COUNT)
 
@@ -41,7 +41,13 @@ function updatePaddleMovement(event) {
 }
 
 function brickReset() {
-  for (var i = 0; i < BRICK_COUNT; i++) brickGrid[i] = true
+  for (var i = 0; i < BRICK_COUNT; i++) {
+    if (Math.random() < 0.5) {
+      brickGrid[i] = true
+    } else {
+      brickGrid[i] = false
+    }
+  }
 }
 
 window.onload = function () {
