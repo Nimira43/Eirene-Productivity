@@ -1,3 +1,9 @@
+const GAME_SETTINGS = {
+  BALL: { x: 75, y: 75, speedX: 5, speedY: 7, radius: 10 },
+  BRICK: { width: 80, height: 20, gap: 2, cols: 10, rows: 14 },
+  PADDLE: { width: 100, thickness: 10, distanceFromEdge: 60, speed: 40, x: 400 },
+}
+
 let ballX = 75
 let ballY = 75
 let ballSpeedX = 5
