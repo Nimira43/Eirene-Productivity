@@ -69,8 +69,6 @@ function ballReset() {
   ballY = canvas.height / 2
 }
 
-// Split up moveAll function
-
 function ballMove() {
   ballX += ballSpeedX
   ballY += ballSpeedY
@@ -94,7 +92,12 @@ function ballBrickHandling() {
   ) {
     if (brickGrid[brickIndexUnderBall]) {
       brickGrid[brickIndexUnderBall] = false
-      ballSpeedY *= -1
+      let prevBallX = ballX - ballSpeedX
+      let prevBallY = ballY - ballSpeedY
+      let prevBrickCol = Math.floor(prevBallX / BRICK_WIDTH)
+      let prevBrickRow = Math.floor(prevBallY / BRICK_HEIGHT)
+      if (prevBrickCol != ballBrickCol) ballSpeedX *= -1
+      if (prevBrickRow != ballBrickRow) ballSpeedY *= -1
     }
   }
 }
