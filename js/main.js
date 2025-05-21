@@ -40,6 +40,10 @@ function updatePaddleMovement(event) {
   }
 }
 
+function brickReset() {
+  for (var i = 0; i < BRICK_COUNT; i++) brickGrid[i] = true
+}
+
 window.onload = function () {
   canvas = document.getElementById('gameCanvas')
   ctx = canvas.getContext('2d')
