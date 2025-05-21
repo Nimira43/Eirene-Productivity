@@ -8,6 +8,7 @@ let brickGrid = Array(GAME_SETTINGS.BRICK.cols * GAME_SETTINGS.BRICK.rows).fill(
 let canvas, ctx
 let score = 0 
 let lives = 5
+let gameRunning = false
 
 function initialiseGame() {
   canvas = document.getElementById('gameCanvas')
@@ -54,7 +55,6 @@ function moveBall() {
   if (ball.y > canvas.height) {
     lives--
     ballReset()
-    // brickReset()
   }
 }
 
