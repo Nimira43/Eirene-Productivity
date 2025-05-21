@@ -78,6 +78,17 @@ function moveAll() {
   if (ballY < 0) ballSpeedY *= -1
   if (ballY > canvas.height) ballReset()
   
+  let ballBrickCol = Math.floor(ballX / BRICK_WIDTH)
+  let ballBrickRow = Math.floor(ballY / BRICK_HEIGHT)
+  let brickIndexUnderBall = rowColToArrayIndex(ballBrickCol, ballBrickRow) 
+  
+  if (
+    brickIndexUnderBall >= 0 &&
+    brickIndexUnderBall < BRICK_COLS * BRICK_ROWS
+  ) {
+    brickGrid[brickIndexUnderBall] = false
+  }
+  
   let paddleTopEdgeY = canvas.height - PADDLE_DISTANCE_FROM_EDGE
   let paddleBottomEdgeY = paddleTopEdgeY + PADDLE_THICKNESS
   let paddleLeftEdgeX = paddleX
@@ -126,15 +137,20 @@ function drawAll() {
 
   drawBricks()
 
-  let mouseBrickCol = Math.floor(mouseX / BRICK_WIDTH)
-  let mouseBrickRow = Math.floor(mouseY / BRICK_HEIGHT)
-  let brickIndexUnderMouse = rowColToArrayIndex(mouseBrickCol, mouseBrickRow)
+  // let mouseBrickCol = Math.floor(mouseX / BRICK_WIDTH)
+  // let mouseBrickRow = Math.floor(mouseY / BRICK_HEIGHT)
+  // let brickIndexUnderMouse = rowColToArrayIndex(mouseBrickCol, mouseBrickRow)
 
-  colourText(
-    `${mouseBrickCol},${mouseBrickRow}: ${ brickIndexUnderMouse}`, mouseX, mouseY, '#fff'
-  )
+  // colourText(
+  //   `${mouseBrickCol},${mouseBrickRow}: ${ brickIndexUnderMouse}`, mouseX, mouseY, '#fff'
+  // )
 
-  if (brickIndexUnderMouse >= 0 && brickIndexUnderMouse < BRICK_COLS * BRICK_ROWS) brickGrid[brickIndexUnderMouse] = false
+  // if (
+  //   brickIndexUnderMouse >= 0 &&
+  //   brickIndexUnderMouse < BRICK_COLS * BRICK_ROWS
+  // ) {
+  //   brickGrid[brickIndexUnderMouse] = false
+  // }
 }
 
 function colourRect(topLeftX, topLeftY, boxWidth, boxHeight, fillColour) {
