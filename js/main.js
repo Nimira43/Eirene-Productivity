@@ -116,8 +116,10 @@ function drawAll() {
   colourRect(paddleX, canvas.height - PADDLE_DISTANCE_FROM_EDGE, PADDLE_WIDTH, PADDLE_THICKNESS, '#fffcfa')
 
   drawBricks()
-  
-  colourText(mouseX + ',' + mouseY, mouseX, mouseY, '#008080')
+
+  let mouseBrickCol = mouseX / BRICK_WIDTH
+  let mouseBrickRow = mouseY / BRICK_HEIGHT
+  colourText(mouseBrickCol + ',' + mouseBrickRow, mouseX, mouseY, '#fff')
 }
 
 function colourRect(topLeftX, topLeftY, boxWidth, boxHeight, fillColour) {
