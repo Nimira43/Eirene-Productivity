@@ -136,17 +136,6 @@ function ballPaddleHandling() {
   } 
 }
   
-function moveAll() {
-  ballMove()
-  ballBrickHandling()
-  ballPaddleHandling()
-}
-  
-function rowColToArrayIndex(col, row) {
-  return col + BRICK_COLS * row
-}
-
-
 function drawGame() {
   ctx.fillStyle = '#000'
   ctx.fillRect(0, 0, canvas.width, canvas.height)
