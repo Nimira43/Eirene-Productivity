@@ -95,10 +95,11 @@ function moveAll() {
 }
 
 function drawBricks() {
-  if (brickGrid[0]) colourRect(0, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
-  if (brickGrid[1]) colourRect(BRICK_WIDTH, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
-  if (brickGrid[2]) colourRect(BRICK_WIDTH * 2, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
-  if (brickGrid[3]) colourRect(BRICK_WIDTH * 3, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
+  for (let i = 0; i < BRICK_COUNT; i++) {
+    if (brickGrid[i]) {
+      colourRect(BRICK_WIDTH * i, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
+    }
+  }
 }
 
 function drawAll() {
