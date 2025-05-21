@@ -42,20 +42,8 @@ function updatePaddleMovement(event) {
   }
 }
 
-// function brickReset() {
-//   bricksLeft = 0
-//   let i
-//   for (i = 0; i < 3 * BRICK_COLS; i++) {
-//     brickGrid[i] = false
-//   }
-//   for (; i < BRICK_COLS * BRICK_ROWS; i++) {
-//     brickGrid[i] = true
-//     bricksLeft++
-//   }
-// }
-
 function brickReset() {
-  bricksLeft = 0;
+  bricksLeft = 0
 
   for (let row = 0; row < BRICK_ROWS; row++) {
     for (let col = 0; col < BRICK_COLS; col++) {
