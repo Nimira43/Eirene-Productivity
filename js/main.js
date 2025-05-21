@@ -99,8 +99,7 @@ function ballBrickHandling() {
   }
 }
 
-  
-  
+function ballPaddleHandling() {
   let paddleTopEdgeY = canvas.height - PADDLE_DISTANCE_FROM_EDGE
   let paddleBottomEdgeY = paddleTopEdgeY + PADDLE_THICKNESS
   let paddleLeftEdgeX = paddleX
@@ -117,8 +116,11 @@ function ballBrickHandling() {
     let centreOfPaddleX = paddleX + PADDLE_WIDTH / 2
     let ballDistanceFromPaddleCentreX = ballX - centreOfPaddleX
     ballSpeedX = ballDistanceFromPaddleCentreX * 0.35
-  }
+  } 
 }
+  
+  
+
 
 function rowColToArrayIndex(col, row) {
   return col + BRICK_COLS * row
