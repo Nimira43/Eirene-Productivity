@@ -100,7 +100,10 @@ function ballMove() {
   if (ballX < 0) ballSpeedX *= -1
   if (ballX > canvas.width) ballSpeedX *= -1
   if (ballY < 0) ballSpeedY *= -1
-  if (ballY > canvas.height) ballReset()
+  if (ballY > canvas.height) {
+    ballReset()
+    brickReset()
+  }
 }
 
 function ballBrickHandling() {
