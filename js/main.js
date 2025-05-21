@@ -5,9 +5,9 @@ let ballSpeedY = 7
 
 const BRICK_WIDTH = 100
 const BRICK_HEIGHT = 50
-const BRICK_COUNT = 4
+const BRICK_COUNT = 5
 
-let brickGrid = [ false, true, true, false ]
+let brickGrid = new Array(BRICK_COUNT)
 
 const PADDLE_WIDTH = 100
 const PADDLE_THICKNESS = 10
