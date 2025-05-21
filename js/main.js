@@ -4,10 +4,10 @@ let ballSpeedX = 5
 let ballSpeedY = 7
 
 const BRICK_WIDTH = 80
-const BRICK_HEIGHT = 20
+const BRICK_HEIGHT = 40
 const BRICK_GAP = 2
 const BRICK_COLS = 10
-const BRICK_ROWS = 14
+const BRICK_ROWS = 7
 
 let brickGrid = new Array(BRICK_COLS * BRICK_ROWS)
 
@@ -125,8 +125,6 @@ function moveAll() {
   ballPaddleHandling()
 }
   
-
-
 function rowColToArrayIndex(col, row) {
   return col + BRICK_COLS * row
 }
