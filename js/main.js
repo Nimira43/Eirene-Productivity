@@ -4,25 +4,25 @@ const GAME_SETTINGS = {
   PADDLE: { width: 100, thickness: 10, distanceFromEdge: 60, speed: 40, x: 400 },
 }
 
-let ballX = 75
-let ballY = 75
-let ballSpeedX = 5
-let ballSpeedY = 7
+// let ballX = 75
+// let ballY = 75
+// let ballSpeedX = 5
+// let ballSpeedY = 7
 
-const BRICK_WIDTH = 80
-const BRICK_HEIGHT = 20
-const BRICK_GAP = 2
-const BRICK_COLS = 10
-const BRICK_ROWS = 14
+// const BRICK_WIDTH = 80
+// const BRICK_HEIGHT = 20
+// const BRICK_GAP = 2
+// const BRICK_COLS = 10
+// const BRICK_ROWS = 14
 
-let brickGrid = new Array(BRICK_COLS * BRICK_ROWS)
-let bricksLeft = 0
+let brickGrid = Array(GAME_SETTINGS.BRICK.cols * GAME_SETTINGS.BRICK.rows).fill(true)
+// let bricksLeft = 0
 
-const PADDLE_WIDTH = 100
-const PADDLE_THICKNESS = 10
-const PADDLE_DISTANCE_FROM_EDGE = 60
-const PADDLE_SPEED = 40 // key based movement.
-let paddleX = 400
+// const PADDLE_WIDTH = 100
+// const PADDLE_THICKNESS = 10
+// const PADDLE_DISTANCE_FROM_EDGE = 60
+// const PADDLE_SPEED = 40
+// let paddleX = 400
 let canvas, ctx
 
 function updatePaddleMovement(event) {
