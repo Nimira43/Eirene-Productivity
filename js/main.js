@@ -102,7 +102,7 @@ function resetGame() {
   brickReset()
   ballReset()
   alert('You are dead. Press any key to start a new game...')
-  document.addEventListener('keydown', initializeGame, { once: true })
+  document.addEventListener('keydown', initialiseGame, { once: true })
 }
 
 function drawHUD() {
