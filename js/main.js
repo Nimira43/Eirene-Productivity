@@ -99,11 +99,19 @@ function moveAll() {
 }
 
 function drawBricks() {
-  for (let i = 0; i < BRICK_COUNT; i++) {
-    if (brickGrid[i]) {
-      colourRect(BRICK_WIDTH * i, 0, BRICK_WIDTH - BRICK_GAP, BRICK_HEIGHT, '#ff4500')
+  for (let eachRow = 0; eachRow < BRICK_ROWS; eachRow++) {
+    for (let i = 0; i < BRICK_COUNT; i++) {
+      if (brickGrid[i]) {
+        colourRect(
+          BRICK_WIDTH * i,
+          BRICK_HEIGHT * eachRow,
+          BRICK_WIDTH - BRICK_GAP,
+          BRICK_HEIGHT - BRICK_GAP,
+          '#ff4500'
+        )
+      }
     }
-  }
+  }  
 }
 
 function drawAll() {
