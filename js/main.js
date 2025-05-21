@@ -49,8 +49,10 @@ function updatePaddleMovement(event) {
 }
 
 function brickReset() {
+  bricksLeft = 0
   for (var i = 0; i < BRICK_COLS * BRICK_ROWS; i++) {
-    brickGrid[i] = true    
+    brickGrid[i] = true
+    bricksLeft++
   }
 }
 
