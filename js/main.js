@@ -106,6 +106,10 @@ function ballMove() {
   }
 }
 
+function isBrickAtColRow(col, row) {
+  
+}
+
 function ballBrickHandling() {
   let ballBrickCol = Math.floor(ballX / BRICK_WIDTH)
   let ballBrickRow = Math.floor(ballY / BRICK_HEIGHT)
