@@ -4,6 +4,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #012222;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.6)),
+    url('../images/background/bg.jpg') no-repeat center;
+  background-size: cover;
   overflow: hidden;
+}
+
+canvas {
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.8);
 }
