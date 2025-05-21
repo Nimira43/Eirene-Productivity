@@ -112,28 +112,20 @@ function ballBrickHandling() {
   }
 }
 
-function ballPaddleHandling() {
-  let paddleTopEdgeY = canvas.height - PADDLE_DISTANCE_FROM_EDGE
-  let paddleBottomEdgeY = paddleTopEdgeY + PADDLE_THICKNESS
-  let paddleLeftEdgeX = paddleX
-  let paddleRightEdgeX = paddleLeftEdgeX + PADDLE_WIDTH
+function checkPaddleCollision() {
+  let ball = GAME_SETTINGS.BALL
+  let paddle = GAME_SETTINGS.PADDLE
+  let paddleTop = canvas.height - paddle.distanceFromEdge
 
   if (
-    ballY > paddleTopEdgeY &&
-    ballY < paddleBottomEdgeY &&
-    ballX > paddleLeftEdgeX &&
-    ballX < paddleRightEdgeX
+    ball.y > paddleTop &&
+    ball.y < paddleTop + paddle.thickness &&
+    ball.x > paddle.x &&
+    ball.x < paddle.x + paddle.width
   ) {
-    ballSpeedY *= -1
-
-    let centreOfPaddleX = paddleX + PADDLE_WIDTH / 2
-    let ballDistanceFromPaddleCentreX = ballX - centreOfPaddleX
-    ballSpeedX = ballDistanceFromPaddleCentreX * 0.35
-
-    if (bricksLeft == 0) {
-      brickReset()
-    }
-  } 
+    ball.speedY *= -1
+    ball.speedX = (ball.x - (paddle.x + paddle.width / 2)) * 0.35
+  }
 }
   
 function drawGame() {
