@@ -216,9 +216,7 @@ function drawBricks() {
 function drawAll() {
   colourRect(0, 0, canvas.width, canvas.height, '#000')
   colourCircle(ballX, ballY, 10, '#ffd700')
-
   colourRect(paddleX, canvas.height - PADDLE_DISTANCE_FROM_EDGE, PADDLE_WIDTH, PADDLE_THICKNESS, '#fffcfa')
-
   drawBricks()
 }
 
