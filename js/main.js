@@ -31,8 +31,8 @@ function updateMousePos(event) {
   // Testing code
   ballX = mouseX
   ballY = mouseY
-  ballSpeedX = 3
-  ballSpeedY = 4
+  ballSpeedX = 4
+  ballSpeedY = -4
 }
 
 function updatePaddleMovement(event) {
