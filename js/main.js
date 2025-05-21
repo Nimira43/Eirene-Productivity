@@ -6,6 +6,7 @@ const GAME_SETTINGS = {
 
 let brickGrid = Array(GAME_SETTINGS.BRICK.cols * GAME_SETTINGS.BRICK.rows).fill(true)
 let canvas, ctx
+let score = 0 
 
 function initialiseGame() {
   canvas = document.getElementById('gameCanvas')
@@ -60,6 +61,7 @@ function checkBrickCollision() {
   if (brickGrid[index]) {
     brickGrid[index] = false
     ball.speedY *= -1
+    score++
   }
 }
 
@@ -86,6 +88,12 @@ function updateAll() {
   moveBall()
   checkBrickCollision()
   checkPaddleCollision()
+}
+
+function drawScore() {
+  ctx.fillStyle = '#ffffff'
+  ctx.font = '20px Arial'
+  ctx.fillText(`Score: ${score}`, 20, 30)
 }
   
 function drawGame() {
@@ -124,6 +132,7 @@ function drawGame() {
       )
     }
   })
+  drawScore()
 }
 
 function gameLoop() {
