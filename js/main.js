@@ -97,6 +97,7 @@ function updateAll() {
 }
 
 function resetGame() {
+  gameRunning = false
   score = 0
   lives = 5
   brickReset()
@@ -152,6 +153,7 @@ function drawGame() {
 }
 
 function gameLoop() {
+  if (!gameRunning) return
   updateAll()
   drawGame()
   requestAnimationFrame(gameLoop) 
