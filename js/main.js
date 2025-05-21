@@ -42,8 +42,12 @@ function updatePaddleMovement(event) {
 }
 
 function brickReset() {
-  for (var i = 0; i < BRICK_COLS; i++) {
-    brickGrid[i] = true
+  for (var i = 0; i < BRICK_COLS * BRICK_ROWS; i++) {
+    if (Math.random() < 0.5) {
+      brickGrid[i] = true
+    } else {
+      brickGrid[i] = false
+    }
   }
 }
 
