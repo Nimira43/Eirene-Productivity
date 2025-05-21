@@ -101,6 +101,10 @@ function moveAll() {
   }
 }
 
+function rowColToArrayIndex(col, row) {
+  return col + BRICK_COLS * row
+}
+
 function drawBricks() {
   for (let eachRow = 0; eachRow < BRICK_ROWS; eachRow++) {
     for (let eachCol = 0; eachCol < BRICK_COLS; eachCol++) {
