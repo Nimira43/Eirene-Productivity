@@ -7,6 +7,7 @@ const GAME_SETTINGS = {
 let brickGrid = Array(GAME_SETTINGS.BRICK.cols * GAME_SETTINGS.BRICK.rows).fill(true)
 let canvas, ctx
 let score = 0 
+let lives = 5
 
 function initialiseGame() {
   canvas = document.getElementById('gameCanvas')
@@ -35,8 +36,12 @@ function brickReset() {
 }
 
 function ballReset() {
-  GAME_SETTINGS.BALL.x = canvas.width / 2
-  GAME_SETTINGS.BALL.y = canvas.height / 2
+  if (lives > 0) {
+    GAME_SETTINGS.BALL.x = canvas.width / 2
+    GAME_SETTINGS.BALL.y = canvas.height / 2
+  } else {
+    resetGame()
+  }
 }
 
 function moveBall() {
@@ -47,8 +52,9 @@ function moveBall() {
   if (ball.x < 0 || ball.x > canvas.width) ball.speedX *= -1
   if (ball.y < 0) ball.speedY *= -1
   if (ball.y > canvas.height) {
+    lives--
     ballReset()
-    brickReset()
+    // brickReset()
   }
 }
 
@@ -90,10 +96,20 @@ function updateAll() {
   checkPaddleCollision()
 }
 
-function drawScore() {
+function resetGame() {
+  score = 0
+  lives = 5
+  brickReset()
+  ballReset()
+  alert('You are dead. Press any key to start a new game...')
+  document.addEventListener('keydown', initializeGame, { once: true })
+}
+
+function drawHUD() {
   ctx.fillStyle = '#ffffff'
   ctx.font = '20px Arial'
   ctx.fillText(`Score: ${score}`, 20, 30)
+  ctx.fillText(`Lives: ${lives}`, canvas.width - 100, 30)
 }
   
 function drawGame() {
@@ -132,7 +148,7 @@ function drawGame() {
       )
     }
   })
-  drawScore()
+  drawHUD()
 }
 
 function gameLoop() {
