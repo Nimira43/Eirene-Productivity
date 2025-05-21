@@ -131,9 +131,10 @@ function ballBrickHandling() {
     ballBrickRow >= 0 &&
     ballBrickRow < BRICK_ROWS
   ) {
-    if (brickGrid[brickIndexUnderBall]) {
+    if (isBrickAtColRow(ballBrickCol, ballBrickRow)) {
       brickGrid[brickIndexUnderBall] = false
       bricksLeft--
+    
       let prevBallX = ballX - ballSpeedX
       let prevBallY = ballY - ballSpeedY
       let prevBrickCol = Math.floor(prevBallX / BRICK_WIDTH)
@@ -142,15 +143,13 @@ function ballBrickHandling() {
       let bothTestsFailed = true
 
       if (prevBrickCol != ballBrickCol) {
-        let adjBrickSide = rowColToArrayIndex(prevBrickCol, ballBrickRow)
-        if (brickGrid[adjBrickSide] == false) {
+        if (isBrickAtColRow(prevBrickCol, ballBrickRow) == false) {
           ballSpeedX *= -1
           bothTestsFailed = false
         }
       }
       if (prevBrickRow != ballBrickRow) {
-        let adjBrickTopBottom = rowColToArrayIndex(prevBrickCol, ballBrickRow)
-        if (brickGrid[adjBrickTopBottom] == false) {
+        if (isBrickAtColRow(prevBrickCol, ballBrickRow) == false) {
           ballSpeedY *= -1
           bothTestsFailed = false
         }
