@@ -81,6 +81,7 @@ function ballMove() {
   if (ballY > canvas.height) ballReset()
 }
 
+function ballBrickHandling() {
   let ballBrickCol = Math.floor(ballX / BRICK_WIDTH)
   let ballBrickRow = Math.floor(ballY / BRICK_HEIGHT)
   let brickIndexUnderBall = rowColToArrayIndex(ballBrickCol, ballBrickRow) 
@@ -96,6 +97,9 @@ function ballMove() {
       ballSpeedY *= -1
     }
   }
+}
+
+  
   
   let paddleTopEdgeY = canvas.height - PADDLE_DISTANCE_FROM_EDGE
   let paddleBottomEdgeY = paddleTopEdgeY + PADDLE_THICKNESS
