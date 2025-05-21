@@ -3,11 +3,11 @@ let ballY = 75
 let ballSpeedX = 5
 let ballSpeedY = 7
 
-const BRICK_WIDTH = 100
-const BRICK_HEIGHT = 50
+const BRICK_WIDTH = 80
+const BRICK_HEIGHT = 20
 const BRICK_GAP = 2
-const BRICK_COLS = 8
-const BRICK_ROWS = 4
+const BRICK_COLS = 10
+const BRICK_ROWS = 14
 
 let brickGrid = new Array(BRICK_COLS * BRICK_ROWS)
 
