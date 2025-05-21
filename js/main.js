@@ -104,7 +104,7 @@ function moveAll() {
 function drawBricks() {
   for (let i = 0; i < BRICK_COUNT; i++) {
     if (brickGrid[i]) {
-      colourRect(BRICK_WIDTH * i, 0, BRICK_WIDTH - 2, BRICK_HEIGHT, '#ff4500')
+      colourRect(BRICK_WIDTH * i, 0, BRICK_WIDTH - BRICK_GAP, BRICK_HEIGHT, '#ff4500')
     }
   }
 }
