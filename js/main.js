@@ -1,7 +1,7 @@
 const GAME_SETTINGS = {
-  BALL: { x: 75, y: 75, speedX: 5, speedY: 7, radius: 10 },
+  BALL: { x: 75, y: 75, speedX: 2, speedY: 3, radius: 10 },
   BRICK: { width: 80, height: 20, gap: 2, cols: 10, rows: 14 },
-  PADDLE: { width: 100, thickness: 10, distanceFromEdge: 60, speed: 40, x: 400 },
+  PADDLE: { width: 100, thickness: 10, distanceFromEdge: 60, speed: 70, x: 400 },
 }
 
 let brickGrid = Array(GAME_SETTINGS.BRICK.cols * GAME_SETTINGS.BRICK.rows).fill(true)
@@ -75,7 +75,10 @@ function checkPaddleCollision() {
     ball.x < paddle.x + paddle.width
   ) {
     ball.speedY *= -1
-    ball.speedX = (ball.x - (paddle.x + paddle.width / 2)) * 0.35
+    
+    let centreOfPaddleX = paddle.x + paddle.width / 2;
+    let ballDistanceFromCentre = ball.x - centreOfPaddleX
+    ball.speedX = ballDistanceFromCentre * 0.2
   }
 }
 
