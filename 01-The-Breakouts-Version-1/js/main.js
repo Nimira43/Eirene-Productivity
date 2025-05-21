@@ -15,9 +15,19 @@ let bricksLeft = 0
 const PADDLE_WIDTH = 100
 const PADDLE_THICKNESS = 10
 const PADDLE_DISTANCE_FROM_EDGE = 60
-const PADDLE_SPEED = 40 // key based movement.
+const PADDLE_SPEED = 30 // key based movement.
 let paddleX = 400
 let canvas, ctx
+let mouseX = 0
+let mouseY = 0
+
+function updateMousePos(event) {
+  let rect = canvas.getBoundingClientRect()
+  let root = document.documentElement
+  mouseX = event.clientX - rect.left - root.scrollLeft
+  mouseY = event.clientY - rect.top - root.scrollTop
+  paddleX = mouseX - PADDLE_WIDTH / 2
+}
 
 function updatePaddleMovement(event) {
   if (event.key === 'ArrowLeft') {
@@ -31,6 +41,18 @@ function updatePaddleMovement(event) {
     paddleX = canvas.width - PADDLE_WIDTH
   }
 }
+
+// function brickReset() {
+//   bricksLeft = 0
+//   let i
+//   for (i = 0; i < 3 * BRICK_COLS; i++) {
+//     brickGrid[i] = false
+//   }
+//   for (; i < BRICK_COLS * BRICK_ROWS; i++) {
+//     brickGrid[i] = true
+//     bricksLeft++
+//   }
+// }
 
 function brickReset() {
   bricksLeft = 0;
@@ -52,7 +74,9 @@ window.onload = function () {
   canvas = document.getElementById('gameCanvas')
   ctx = canvas.getContext('2d')
   let fps = 30
-  setInterval(updateAll, 1000 / fps)   
+  setInterval(updateAll, 1000 / fps)
+
+  canvas.addEventListener('mousemove', updateMousePos)    
   document.addEventListener('keydown', updatePaddleMovement)
 
   brickReset() 
