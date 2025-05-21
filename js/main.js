@@ -33,21 +33,22 @@ function initialiseGame() {
   document.addEventListener('keydown', updatePaddleMovement)
   brickReset() 
   ballReset()
-  gameLoop()}
-
+  gameLoop()
+}
 
 function updatePaddleMovement(event) {
+  let { PADDLE } = GAME_SETTINGS
+  
   if (event.key === 'ArrowLeft') {
-    paddleX -= PADDLE_SPEED
-  } else if (event.key === 'ArrowRight') {
-    paddleX += PADDLE_SPEED
-  }
-  if (paddleX < 0) {
-    paddleX = 0
-  } else if (paddleX > canvas.width - PADDLE_WIDTH) {
-    paddleX = canvas.width - PADDLE_WIDTH
+    PADDLE.x -= PADDLE.speed;
+    PADDLE.x = Math.max(0, PADDLE.x)
+  } 
+  else if (event.key === 'ArrowRight') {
+    PADDLE.x += PADDLE.speed
+    PADDLE.x = Math.min(canvas.width - PADDLE.width, PADDLE.x)
   }
 }
+  
 
 function brickReset() {
   bricksLeft = 0;
