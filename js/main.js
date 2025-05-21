@@ -107,7 +107,17 @@ function ballMove() {
 }
 
 function isBrickAtColRow(col, row) {
-  
+  if (
+    col >= 0 &&
+    col < BRICK_COLS &&
+    row >= 0 &&
+    row < BRICK_ROWS
+  ) {
+    let brickIndexUnderCoord = rowColToArrayIndex(col, row)
+    return brickGrid[brickIndexUnderCoord]
+  } else {
+    return false
+  }
 }
 
 function ballBrickHandling() {
