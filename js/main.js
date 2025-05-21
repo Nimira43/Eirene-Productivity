@@ -52,6 +52,8 @@ window.onload = function () {
 
   canvas.addEventListener('mousemove', updateMousePos)    
   document.addEventListener('keydown', updatePaddleMovement)
+
+  brickReset() 
 }
 
 function updateAll() {
