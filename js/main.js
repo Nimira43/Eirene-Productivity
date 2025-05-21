@@ -101,6 +101,7 @@ function ballBrickHandling() {
   ) {
     if (brickGrid[brickIndexUnderBall]) {
       brickGrid[brickIndexUnderBall] = false
+      bricksLeft--
       let prevBallX = ballX - ballSpeedX
       let prevBallY = ballY - ballSpeedY
       let prevBrickCol = Math.floor(prevBallX / BRICK_WIDTH)
