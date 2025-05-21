@@ -27,12 +27,6 @@ function updateMousePos(event) {
   mouseX = event.clientX - rect.left - root.scrollLeft
   mouseY = event.clientY - rect.top - root.scrollTop
   paddleX = mouseX - PADDLE_WIDTH / 2
-
-  // Testing code
-  ballX = mouseX
-  ballY = mouseY
-  ballSpeedX = 4
-  ballSpeedY = -4
 }
 
 function updatePaddleMovement(event) {
