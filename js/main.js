@@ -108,7 +108,7 @@ function rowColToArrayIndex(col, row) {
 function drawBricks() {
   for (let eachRow = 0; eachRow < BRICK_ROWS; eachRow++) {
     for (let eachCol = 0; eachCol < BRICK_COLS; eachCol++) {
-      let arrayIndex = BRICK_COLS * eachRow + eachCol
+      let arrayIndex = rowColToArrayIndex(eachCol, eachRow)
       if (brickGrid[arrayIndex]) {
         colourRect(
           BRICK_WIDTH * eachCol,
